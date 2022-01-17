@@ -1,31 +1,29 @@
-# Monkey
+<h1>Monkey</h1>
 Editor de Rich Text WYSIWYG
 
 
-Modo de usar
-Adicionar folha de estilo padrão dentro da tag header
+<h3>Modo de usar</h3>
+Adicionar folha de estilo padrão dentro da tag <code>header</code><br>
+<pre style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);"><span style="color: rgb(98, 200, 243);">&lt;<span style="font-weight: 700;">link</span> <span>rel</span>=<span style="color: rgb(162, 252, 162);">"stylesheet"</span> href=<span style="color: rgb(162, 252, 162);">"https://dominio.ext/assets/css/monkey.min.css"</span> /&gt;</span></pre>
 
-<link rel="stylesheet" href="https://dominio.ext/assets/css/monkey.min.css" />
+Adicionar tag <code>textarea</code> com um id<br>
+        <pre style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);"><span style="color: rgb(98, 200, 243);">&lt;<span style="font-weight: 700;">textarea</span> id=<span style="color: rgb(162, 252, 162);">"editor"</span>&gt;</span><span style="color: rgb(98, 200, 243);">&lt;/<span style="font-weight: 700;">textarea</span>&gt;</span></pre>
 
-Adicionar tag textarea com um id
+Adicionar javascript antes do fechamento da <code>body</code><br>
+<pre style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);"><span style="color: rgb(98, 200, 243);">&lt;<span style="font-weight: 700;">script</span> src=<span style="color: rgb(162, 252, 162);">"https://dominio.ext/assets/js/monkey.min.js"</span>&gt;</span><span style="color: rgb(98, 200, 243);">&lt;/<span style="font-weight: 700;">script</span>&gt;</span></pre>
 
-<textarea id="editor"></textarea>
-
-Adicionar javascript antes do fechamento da body
-
-<script src="https://dominio.ext/assets/js/monkey.min.js"></script>
-
-E após a tag script com o src, inicializar o editor:
-
-new Monkey({
-    base_url: "http://localhost/monkey/git/",
-    path_css: "assets/css/",
-    textarea: "#editor",
-    theme   : "light"
+E após a tag <code>script</code> com o src, inicializar o editor:<br>
+<pre style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: rgb(255, 255, 255);"><span style="color: rgb(252, 194, 140);">new Monkey</span>({
+    <span style="color: rgb(255, 255, 170);">base_url: <span style="color: rgb(162, 252, 162);">"http://localhost/monkey/git/"</span>,
+    path_css: <span style="color: rgb(162, 252, 162);">"assets/css/"</span>,
+    textarea: <span style="color: rgb(162, 252, 162);">"#editor"</span>,
+    theme   : <span style="color: rgb(162, 252, 162);">"light"</span>
 });     
-        
+</pre>  
 
-    base_url: Pode deixar o valor vazio caso não precise que o url seja absoluto.
-    path_css: Diretório onde está armazenado o arquivo css do tema. (pode e deve ficar com o valor vazio se o arquivo estiver no diretório raiz).
-    textarea: O id definido no seu textarea.
-    theme: Arquivo css com o esquma de cores do editor. Existem dois disponíveis, o mk-light.css e mk-dark.css
+<ol>
+    <li>base_url: Pode deixar o valor vazio caso não precise que o url seja absoluto.</li>
+    <li>path_css: Diretório onde está armazenado o arquivo css do tema. (pode e deve ficar com o valor vazio se o arquivo estiver no diretório raiz).</li>
+    <li>textarea: O id definido no seu textarea.</li>
+    <li>theme: Arquivo css com o esquma de cores do editor. Existem dois disponíveis, o mk-light.css e mk-dark.css</li>
+</ol>
