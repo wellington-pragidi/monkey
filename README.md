@@ -1,5 +1,5 @@
 <h1>Monkey</h1>
-Editor de Rich Text WYSIWYG
+<h2>Editor de Rich Text WYSIWYG</h2>
 
 
 <h3>Modo de usar</h3>
