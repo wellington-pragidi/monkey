@@ -1,0 +1,541 @@
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/Ubuntu.ttf') format('woff2');
+}
+@font-face {
+    font-family: 'SourceCode';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/SourceCode.ttf') format('woff2');
+}
+@font-face {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/Muli.ttf') format('woff2');
+}
+@font-face {
+    font-family: 'monkey';
+    src: url('../fonts/monkey.eot?75812039');
+    src: url('../fonts/monkey.eot?75812039#iefix') format('embedded-opentype'),
+         url('../fonts/monkey.woff2?75812039') format('woff2'),
+         url('../fonts/monkey.woff?75812039') format('woff'),
+         url('../fonts/monkey.ttf?75812039') format('truetype'),
+         url('../fonts/monkey.svg?75812039#monkey') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* toolbar */
+#mk_toolbar {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom: none;
+    border-radius: 2px 2px 0 0;
+    padding: 2px 4px 4px 2px;
+}
+#mk_toolbar li {
+    display: inline-block;
+    list-style: none;
+}
+#mk_toolbar button, #mk_toolbar label {
+    position: relative;
+    top: 1.4px;
+    margin: 0 3px;
+    padding: 2px 4px;
+    border-radius: 1px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    transition: .4s;
+}
+#mk_toolbar button:hover, #mk_toolbar label:hover {
+    transition: .4s;
+}
+#mk_toolbar [class*=mk_], #mk_toolbar [id*=mk_] {
+    font-size: 1.03rem;
+    transition: .4s;
+}
+#mk_toolbar li:hover [class*=mk_], #mk_toolbar li:hover [id*=mk_] {
+    transition: .4s;
+}
+#mk_toolbar .separator {
+    height: 100%;
+    margin: 0 7px 0 4px;
+    display: inline-block;
+}
+#mk_toolbar .separator::before {
+    position: absolute;
+    top: 0;
+    display: block;
+    content: '';
+    width: 2px;
+    height: 100%;
+}
+#mk_toolbar li.select, #mk_toolbar .select ~ span, #mk_toolbar .select ~ button {
+    position: relative;
+}
+/* dropdown / dropdown (geral) */
+#mk_toolbar .dropdown {
+    position: absolute;
+    top: 26px;
+    left: 0;
+    width: 150px;
+    margin: 0;
+    padding: 3px 0 0 0;
+    list-style: none;
+    transition: .3s;
+    z-index: 8888;
+    display: none;
+}
+#mk_toolbar .select:hover .dropdown {
+    display: block;
+    transition: .3s;
+}
+#mk_toolbar .select:hover button.opendown {
+    border-width: 1px;
+    border-style: solid;
+}
+#mk_toolbar .dropdown button {
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    margin: 0 0;
+    padding: 3px 7px;
+    border-width: 1px;
+    border-style: solid;
+    border-top: none;
+    font-size: 1rem;
+}
+/* lista com dropdown */
+#mk_toolbar li.select span {
+    position: relative;
+    display: inline-block;
+    padding: 2px 4px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    transition: .4s;
+}
+#mk_toolbar .select span:hover {
+    transition: .4s;
+}
+#mk_toolbar .select.caret span {
+    position: relative;
+    width: 100%;
+    padding: 3px 14px 2px 5px;
+}
+#mk_toolbar .select.caret span::after {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+    display: block;
+    content: "\25BC";
+    font-size: 0.7rem;
+    transform: scaleY(0.6);
+}
+#mk_toolbar .select.caret.format {
+    margin-right: 4px;
+}
+#mk_toolbar .select.caret #format_block::before,
+#mk_toolbar .select.caret #format_inline::before {
+    position: relative;
+    display: block;
+    top: auto;
+    padding: 1px 4px;
+    font-size: .9rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+#mk_toolbar .select.caret #format_block::before {
+    content: "Format block";
+}
+#mk_toolbar .select.caret #format_inline::before {
+    content: "Format inline";
+}
+#switch_mode.mode_code ~ label {
+    border-width: 1px;
+    border-style: solid;
+}
+/* dropdown / dropdown (especificos) */
+#blocks button, #fontsize button {
+    font-family: 'Ubuntu', sans-serif;
+}
+#blocks button#address, #inlines button, #inlines button #strike small, #cites button {
+    font-family: 'SourceCode', monospace;
+}
+#mk_toolbar .dropdown#blocks {
+    width: 180px;
+}
+#blocks #h2 {
+    font-size: 1.6rem;
+}
+#blocks #h3 {
+    font-size: 1.43rem;
+}
+#blocks #h4 {
+    font-size: 1.25rem;
+}
+#blocks #h5 {
+    font-size: 1.125rem;
+}
+#blocks #h6 {
+    font-size: 1rem;
+}
+#blocks #h2, #blocks #h3, #blocks #h4, #blocks #h5, #blocks #h6 {
+    font-weight: bold;
+    letter-spacing: 0.085rem;
+}
+#insert_grid b {
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    padding: 0 2px;
+    height: 3px;
+}
+#insert_grid #x_66 b {
+    width: calc(50% - 4px)
+}
+#insert_grid #x_444 b {
+    width: calc(33% - 4px)
+}
+#insert_grid #x_75 b:first-of-type {
+    width: calc(58% - 2px)
+}
+#insert_grid #x_75 b:last-of-type {
+    width: calc(41% - 2px)
+}
+#insert_grid #x_57 b:first-of-type {
+    width: calc(41% - 2px)
+}
+#insert_grid #x_57 b:last-of-type {
+    width: calc(58% - 2px)
+}
+#insert_grid #x_84 b:first-of-type {
+    width: calc(66% - 2px)
+}
+#insert_grid #x_84 b:last-of-type {
+    width: calc(33% - 2px)
+}
+#insert_grid #x_48 b:first-of-type {
+    width: calc(33% - 2px)
+}
+#insert_grid #x_48 b:last-of-type {
+    width: calc(66% - 2px)
+}
+#mk_toolbar #text_aligns.dropdown {
+    width: 152px;
+}
+#mk_toolbar #text_aligns.dropdown button.align {
+    display: inline-block;
+    width: 38px;
+}
+
+#mk_toolbar #mk_textcolors {
+    width: 141px;
+    border-left-width: 1px;
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    font-size: 0;
+}
+#mk_toolbar #mk_textcolors button.color {
+    width: 20px;
+    height: 20px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    display: inline-block;
+    font-size: 1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+}
+
+#mk_toolbar #fontsize {
+    width: 82px;
+}
+#mk_toolbar #fontsize button {
+    padding-left: 20px;
+}
+[class^="mk_ico_"]::before, [class*=" mk_ico_"]::before {
+    font-family: "monkey";
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    text-align: center;
+    width: 22px;
+}
+.mk_ico_underline::before { content: '\e800' }
+.mk_ico_image::before { content: '\e801' }
+.mk_ico_embed::before { content: '\e802' }
+.mk_ico_video::before { content: '\e803' }
+.mk_ico_quote::before { content: '\e804' }
+.mk_ico_left::before { content: '\e805' }
+.mk_ico_center::before { content: '\e806' }
+.mk_ico_right::before { content: '\e807' }
+.mk_ico_justify::before { content: '\e808' }
+.mk_ico_bold::before { content: '\e80a' }
+.mk_ico_code::before { content: '\e80b' }
+.mk_ico_color::before { content: '\e80c' }
+.mk_ico_strike::before { content: '\e80d' }
+.mk_ico_italic::before { content: '\e80e' }
+.mk_ico_unlink::before { content: '\e80f' }
+.mk_ico_unorderlist::before { content: '\e810' }
+.mk_ico_orderlist::before { content: '\e811' }
+.mk_ico_link::before { content: '\e812' }
+.mk_ico_header::before { content: '\e813' }
+.mk_ico_caret::before { content: '\e814' }
+.mk_ico_fullscreen::before { content: '\e816' }
+.mk_ico_lorem::before { content: '\e81e'; font-weight: lighter !important; }
+.mk_ico_help::before { content: '\e820' }
+.mk_ico_rule::before { content: '\e821' }
+.mk_ico_grid::before { content: '\e824' }
+.mk_ico_fontsize::before { content: '\ea61' }
+.mk_ico_down::after {
+    position: relative;
+    top: 2px;
+    left: 1px;
+    font-size: 13px;
+    font-family: "monkey";
+    content: '\e814';
+    font-style: normal;
+    font-weight: normal;
+}
+
+.screen_reader {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important
+}
+
+/* wrap editor */
+#mk_wrap {
+    width: 64rem; /* 1024px */
+    max-width: 100%;
+    margin: 25px auto;
+    padding: 0 12px;
+}
+#mk_grow {
+    position: relative;
+    display: grid;
+}
+#mk_grow::after {
+    content: attr(data-replicated-value) " ";
+    white-space: pre-wrap;
+    visibility: hidden;
+}
+#mk_grow, #mk_grow #monkey, #mk_grow #mk_srcode {
+    resize: none;
+    overflow: hidden;
+    min-height: 30vh;
+}
+#mk_grow #monkey, #mk_grow #mk_srcode, #mk_grow::after {
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.48rem 0.55rem;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+/* editor */
+#monkey {
+    position: relative;
+    font-size: 1.05rem;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.4;
+    letter-spacing: 0.080rem;
+}
+#mk_srcode {
+    z-index: 1;
+    font-size: 1rem;
+    font-family: 'SourceCode', monospace;
+    white-space: pre-wrap;
+}
+#monkey p {
+    margin: 10px 0;
+}
+#monkey h1 {
+    display: none;
+}
+#monkey h2 {
+    font-size: 1.563rem;
+}
+#monkey h3 {
+    font-size: 1.375rem;
+}
+#monkey h4 {
+    font-size: 1.25rem;
+}
+#monkey h5 {
+    font-size: 1.125rem;
+}
+#monkey h6 {
+    font-size: 1rem;
+}
+#monkey h2, #monkey h3, #monkey h4, #monkey h5, #monkey h6 {
+    margin: 9px 0 3px 0;
+}
+#monkey h2 ~ p, #monkey h3 ~ p, #monkey h4 ~ p, #monkey h5 ~ p, #monkey h6 ~ p {
+    margin-top: 0;
+}
+#monkey a {
+    text-decoration: underline;
+}
+#monkey ul, #monkey ol {
+    padding-left: 27px;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+#monkey img {
+    max-width: 100%; 
+    height: auto; 
+    font-size: 14px;
+}
+#monkey figure {
+    margin: 0.75rem;
+    padding: 5px;
+}
+#monkey figcaption {
+    padding: 8px;
+    font-size: 1rem;
+}
+#monkey audio, #monkey video {
+    padding: 0 0;
+    max-width: 100%
+}
+#monkey audio {
+    border-radius: 30px;
+}
+#monkey pre {
+    white-space: pre-line;
+    margin: 10px 0;
+    font-size: 1rem;
+    font-family: 'SourceCode', monospace;
+}
+#monkey code {
+    padding: 0 1.5px;
+    font-size: 1rem;
+    border-radius: 2px;
+    font-family: 'SourceCode', monospace;
+    line-height: 0.2;
+}
+#monkey blockquote {
+    margin: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.4rem 1rem 0.4rem 1.25rem;
+    font-size: 1.24rem;
+    font-style: italic;
+    text-indent: 1.5rem;
+    letter-spacing: 0.06rem;
+    line-height: 1.3;
+    border-left-width: .7rem;
+    border-style: solid;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 4px 0 0 4px;
+}
+#monkey q::before, q::after {
+    font-size: 1.25rem;
+    font-style: italic;
+}
+#monkey q::before {
+    margin-right: 7px;
+}
+#monkey cite {
+    position: relative;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+#monkey cite::before {
+    position: relative;
+    content: "– ";
+}
+#monkey mark { 
+    padding: 0 2px;
+    border-radius: 2px;
+}
+#monkey hr {
+    margin: 0.75rem 0;
+    background-color: transparent;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-right: none;
+    border-left: none;
+    border-radius: 1px;
+}
+#monkey hr, #monkey br {
+    clear: both;
+}
+#monkey button, #monkey input[type=button], #monkey input[type=reset], #monkey input[type=submit] {
+    cursor: pointer;
+}
+
+#monkey .grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -3px;
+    margin-left: -3px;
+}
+#monkey [class^="cn_"], #monkey [class*=" cn_"] {
+    position: relative;
+    width: 100%;
+    padding: 4px 6px;
+    border-width: 1px;
+    border-style: dashed;
+    min-height: 40px;
+    overflow: hidden;
+}
+@media(min-width: 40rem) { /* 640px */
+    #monkey .cn_s4 { 
+        flex: 0 0 33.333333%; 
+        width: 33.33333% 
+    }
+    #monkey .cn_s5 { 
+        flex: 0 0 41.666667%; 
+        width: 41.66666% 
+    }
+    #monkey .cn_s6 { 
+        flex: 0 0 50%; 
+        width: 50% 
+    }
+    #monkey .cn_s7 { 
+        flex: 0 0 58.333333%; 
+        width: 58.33333% 
+    }
+    #monkey .cn_s8 { 
+        flex: 0 0 66.666667%; 
+        width: 66.66666% 
+    }
+}
+
+#monkey .iframe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+}
+#monkey .iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}

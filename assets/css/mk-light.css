@@ -1,0 +1,109 @@
+#mk_toolbar {
+    border-color: #bbb;
+    background-color: #FFF;
+}
+#mk_toolbar li {
+    display: inline-block;
+    list-style: none;
+}
+#mk_toolbar button, #mk_toolbar label {
+    border-color: #fff;
+    background-color: transparent;
+}
+#mk_toolbar button:hover, #mk_toolbar label:hover, {
+    border-color: #ddd;
+}
+#mk_toolbar [class*=mk_], #mk_toolbar [id*=mk_] {
+    color: #666;
+}
+#mk_toolbar li:hover [class*=mk_], #mk_toolbar li:hover [id*=mk_] {
+    color: #888;
+}
+#mk_toolbar .separator::before {
+    background-color: #eee;
+}
+/* dropdown / dropdown (geral) */
+#mk_toolbar .dropdown {
+    box-shadow: 3px 2px 3px -1px rgba(0, 0, 0, 0.20), -2px 2px 3px -1px rgba(0, 0, 0, 0.20);
+}
+#mk_toolbar .select:hover .dropdown {
+    display: block;
+    transition: .3s;
+}
+#mk_toolbar .select:hover button.opendown {
+    border-color: #ddd;
+}
+#mk_toolbar .dropdown button {
+    border-color: #C5C5C5;
+    background-color: #ddd;
+    color: #666;
+}
+#mk_toolbar .dropdown button:hover {
+    background-color: #eee;
+}
+/* lista com dropdown */
+#mk_toolbar li.select span {
+    border-color: #f0f0f0;
+    color: #666;
+}
+#mk_toolbar .select span:hover {
+    border-color: #ddd;
+    color: #888;
+}
+#switch_mode.mode_code ~ label {
+    border-color: #ddd;
+    background-color: #F2F2F2;
+}
+#insert_grid b {
+    background-color: #666;
+}
+#mk_toolbar #mk_textcolors {
+    border-left-color: #fff;
+    background-color: #fff;
+}
+#mk_toolbar #mk_textcolors button.color {
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+}
+#mk_grow #monkey, #mk_grow #mk_srcode, #mk_grow::after {
+    border-color: #bbb;
+}
+
+/* editor */
+#monkey {
+    color: #444;
+    background-color: #fff;
+}
+#mk_srcode {
+    background-color: #E6EAEE;
+    color: #8E9466;
+}
+#monkey a {
+    color: skyblue;
+}
+#monkey figure {
+    background-color: #FFFFFF;
+}
+#monkey code {
+    color: #DE143C;
+    background-color: rgba(0,0,0,0.10);
+}
+#monkey blockquote {
+    color: #696969;
+    border-right-color: #CCCCCC;
+    border-left-color: #CCCCCC;
+}
+#monkey mark { 
+    background-color: #E2F47B;
+}
+#monkey hr {
+    border-top-color: rgba(0, 0, 0, 0.14);
+    border-bottom-color: rgba(255, 255, 255, 0.09); 
+}
+#monkey [class^="cn_"], #monkey [class*=" cn_"] {
+    border-color: #ccc;
+}
+#monkey::selection {
+    color: darkgreen;
+    background-color: lightseagreen;
+}

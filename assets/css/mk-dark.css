@@ -1,0 +1,100 @@
+#mk_toolbar {
+    border-color: #675D37;
+    background-color: #474336;
+}
+#mk_toolbar button, #mk_toolbar label, #mk_toolbar li.select span {
+    border-color: #524C38;
+    color: #1D1D1D;
+    background-color: transparent;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25) inset;
+}
+#mk_toolbar button:hover, #mk_toolbar label:hover, 
+#mk_toolbar li.select span:hover, #mk_toolbar .select:hover .opendown,
+#switch_mode.mode_code ~ label {
+    border-color: #675D37;
+    color: #675D37;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.20), 1px 1px 1px rgba(0, 0, 0, 0.20) inset;
+}
+#mk_toolbar button:hover::before, #mk_toolbar label:hover::before, 
+#mk_toolbar .select:hover .opendown::before, #mk_toolbar .select:hover .opendown::after,
+#switch_mode.mode_code ~ label::before {
+    filter: brightness(150%);
+}
+#mk_toolbar .separator::before {
+    background-color: #524C38;
+}
+/* dropdowns */
+#mk_toolbar .dropdown {
+    box-shadow: 3px 4px 3px -1px rgba(0, 0, 0, 0.70), -2px 4px 3px -1px rgba(0, 0, 0, 0.70);
+    background-color: #21201D;
+}
+#mk_toolbar .dropdown button {
+    border-left-color: #21201D;
+    border-right-color: #21201D;
+    border-top-color: #000000;
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    background-color: #21201D;
+    color: #949782;
+}
+#mk_toolbar .dropdown button:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+#insert_grid b {
+    background-color: #949782;
+}
+#mk_toolbar #mk_textcolors.dropdown {
+    border-color: #eee;
+    background-color: transparent;
+}
+#mk_toolbar #mk_textcolors.dropdown button.color {
+    border-bottom-color: #eee;
+    border-right-color: #eee;
+}
+
+/* editor */
+#mk_grow #monkey, #mk_grow #mk_srcode, #mk_grow::after {
+    border-color: #524C38;
+    background-color: #2D2D2D;
+}
+#mk_grow #monkey {
+    color: #9BA178;
+    background-color: #21201D;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.30) inset;
+}
+#mk_grow #mk_srcode {
+    background-color: #1D2120;
+    color: #8E9466;
+    border-top: none;
+    border-bottom: none;
+}
+#monkey a {
+    color: #CC0000;
+}
+#monkey figure {
+    background-color: #474336;
+}
+#monkey code {
+    color: #B30056;
+    background-color: rgba(0,0,0,0.30);
+    padding: 0 3px 2px 3px;
+    border-radius: 2px;
+}
+#monkey blockquote {
+    color: inherit;
+    border-color: #474336;
+}
+#monkey mark { 
+    background-color: #91983F;
+    color: #000;
+}
+#monkey hr {
+    border-top-color: rgba(0, 0, 0, 0.30);
+    border-bottom-color: rgba(255, 255, 255, 0.10); 
+}
+#monkey [class^="cn_"], #monkey [class*=" cn_"] {
+    border-color: #000;
+}
+::selection {
+    color: #1B1A18;
+    background-color: #5F5C54;
+}
